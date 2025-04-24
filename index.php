@@ -30,11 +30,11 @@ if (!isset($_SESSION['todos'])) {
       <div class="todo-container">
         <h1>Mes tâches</h1>
         <ul class="todo-list">
-          <?php foreach ($todos as $todo): ?>
+          <?php foreach ($_SESSION['todos'] as $todo): ?>
             <li class="todo-item <? $todo['done'] ? 'low-opacity' : '' ?>">
               <span class="todo-name"><?= $todo['name'] ?></span>
               <button class="btn btn-primary btn-small">
-                <?= $t['done'] ? 'Annuler' : 'Valider' ?>
+                <?= $todo['done'] ? 'Annuler' : 'Valider' ?>
               </button>
               <a href="/includes/remove-todo.php?id=<?= $todo['id'] ?>">
                 <button class="btn btn-danger btn-small">

@@ -7,13 +7,12 @@ $todos = &$_SESSION['todos'] ?? [];
 
 if ($id && count($todos)) {
     $todoIndex = array_search($id, array_column($todos, 'id'));
-    echo $todoIndex;
-    if ($todoIndex !== false) { 
-            // array_splice($todos, $todoIndex, 1);
+    if ($todoIndex !== false) {
+        array_splice($todos, $todoIndex, 1);
     }
 }
 
-// header('location:/');
+header('location:/');
     
 // KISS = Keep It Simple, Stupid 
 // DRY = Dont'Repeat Yourself
